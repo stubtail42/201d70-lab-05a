@@ -87,7 +87,7 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   var sumOne = sum(sumArr[0], sumArr[1])[0];
   var sumTwo = sum(sumArr[2], sumOne)[0];
-  var sumMessage = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumTwo} is their sum.`;
+  var sumMessage = `${sumArr} was passed in as an array of numbers, and ${sumTwo} is their sum.`;
 
   return [sumTwo, sumMessage];
 }
@@ -112,7 +112,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   var productOne = multiply(multArr[0], multArr[1])[0];
   var productTwo = multiply(multArr[2], productOne)[0];
-  var productMessage = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${productTwo}.`;
+  var productMessage = `The numbers ${multArr} have a product of ${productTwo}.`;
 
   return [productTwo, productMessage];
 }
@@ -143,11 +143,11 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   var productArray = 1;
-  for (var i = 1; i < dynamicArray.length; i++){
+  for (var i = 0; i < dynamicArray.length; i++){
     productArray = multiply(productArray, dynamicArray[i])[0];
     //productArray *= dynamicArray[i];
   }
-  var productArrayMessage = `The numbers ${dynamicArray[0]},${dynamicArray[1]},${dynamicArray[2]},${dynamicArray[3]},${dynamicArray[4]} have a product of ${productArray}.`;
+  var productArrayMessage = `The numbers ${dynamicArray} have a product of ${productArray}.`;
   return [productArray, productArrayMessage];
 }
 
