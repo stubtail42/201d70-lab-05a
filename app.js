@@ -144,12 +144,15 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   var productArray = 1;
   for (var i = 0; i < dynamicArray.length; i++){
-    productArray = multiply(productArray, dynamicArray[i])[0];
+    if(dynamicArray[i] !== 0){
+      productArray = multiply(productArray, dynamicArray[i])[0];
+    }
     //productArray *= dynamicArray[i];
   }
   var productArrayMessage = `The numbers ${dynamicArray} have a product of ${productArray}.`;
   return [productArray, productArrayMessage];
 }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray); //eslint-disable-line
